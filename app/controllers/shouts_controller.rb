@@ -7,7 +7,7 @@ class ShoutsController < ApplicationController
 
   private
 
-  def shout_parameter
+  def shout_parameters
     params.require(:shout).permit(:body)
   end
 end
