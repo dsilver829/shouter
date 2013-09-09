@@ -2,7 +2,7 @@ Shouter::Application.routes.draw do
   root to: 'homes#show', via: :get
   resource :dashboard, only: [:show]
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create, :show, :index] do
     post 'follow' => 'following_relationships#create'
   end
   resources :shouts, only: [:show]
