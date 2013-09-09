@@ -12,6 +12,6 @@ class FollowingRelationshipsController < ApplicationController
   private
 
   def user
-    User.find(params[:user_id])
+    @_user ||= User.find(params[:user_id])
   end
 end
