@@ -15,6 +15,10 @@ module Concerns
      followed_user_ids.include? user.id
     end
 
+    def can_follow? user
+      self != user
+    end
+
     def follow user
      followed_users << user
     end
