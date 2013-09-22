@@ -6,4 +6,10 @@ class Shout < ActiveRecord::Base
   def self.text_shouts
     where(content_type: 'TextShout')
   end
+
+  searchable do
+    text :content do
+      content.index
+    end
+  end.results
 end
